@@ -28,7 +28,7 @@ const express_server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(express_server);
 
-/*********** Init setup ************* */
+/******************************* Init setup ******************************* */
 const dotaClientServer = new d2gsi({
   port: GSI_SERVER_PORT
 });
@@ -38,19 +38,7 @@ if (!find_steam_library_paths()) return console.log("There was an issue creating
 setup_root_route();
 start_web_server();
 
-
-
-// /*********** client connection to socket ************* */
-
-// first connect and then start listening for envents
-io.on(SOCKET_EVENT.connection, (_socket) => {
-  // start game server listener for the connected user
-  game_event_listener();
-  // add other listeners here for the client app and the server
-});
-
-
-/*********** Application Init functions ************* */
+/******************************* HELPER FUNCTIONS - start *******************************  */
 
 /**
  * Start the node web server
@@ -58,6 +46,12 @@ io.on(SOCKET_EVENT.connection, (_socket) => {
 function start_web_server() {
   express_server.listen(WEB_SERVER_PORT, () => {
     console.log(`Application listening on port ${WEB_SERVER_PORT}`);
+    /******************************* client connection to socket ******************************* */
+    io.on(SOCKET_EVENT.connection, (_socket) => {
+      // start game server listener for the connected user
+      game_event_listener(_socket);
+      // add other listeners here for the client app and the server
+    });
   });
 }
 
@@ -95,7 +89,7 @@ function copy_GSI_template(gsi_path_in_steam) {
  * @param {*} directory 
  */
 function create_GSI_directory(directory) {
-  fs.mkdir(directory, () => err);
+  fs.mkdir(directory, (err) => err);
 }
 
 /**
@@ -123,22 +117,23 @@ function find_steam_library_paths() {
 /**
  * The function that will start opening up the listener for the game events
  */
-function game_event_listener() {
+function game_event_listener(_socket) {
   // connected clients - will be used for the GSI
   const clients = [];
   // game server listener
   dotaClientServer.events.on(GAME_EVENT.new_client, (client) => {
     // game client opens and push to array of clients
+    console.log(client)
     clients.push(client);
   });
 
   // loop over each client connected to the dota server - client == instances of current user
   setInterval(() => {
     clients.forEach((client, _index) => {
-      if (client.gamestate.hero && client.gamestate.hero.level) {
-            // send data to all clients connected (current user only)
-            io.emit(SOCKET_EVENT.game_state, client)
-        }
+      console.log(client.gamestate)
+      io.emit(SOCKET_EVENT.game_state, client)
     });
   }, GAME_DATA_FREQ); // Every 5 seconds
-  }
+}
+
+/******************************* HELPER FUNCTIONS - end *******************************  */

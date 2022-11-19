@@ -7,11 +7,15 @@
   <title>Document</title>
 </head>
 <body>
+  <pre id="data"></pre>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script>
   <script>
     var socket = io();
     // socket.emit('chat message', input.value);
     console.log(socket)
+    socket.on('game_state', (data) => {
+      document.getElementById("data").innerHTML = JSON.stringify(data.gamestate, null, 2);
+    })
   </script>
 </body>
 </html>
