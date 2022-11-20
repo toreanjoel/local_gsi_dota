@@ -8,7 +8,7 @@
 /****** Socket methods *****/
 function socket_setup() {
 	// this needs to be removed below and point to the current node server
-	var socket = io("https://192.168.1.117:7000/");
+	var socket = io();
 	socket.on(EVENTS.GAME_STATE, (data) => {
 		const { gamestate } = data;
 		if (!gamestate) return;
@@ -38,14 +38,16 @@ function get_persisted_widgets() {
 }
 
 // render the hero
-function render_hero() {
+function render_hero(gamestate) {
 	const { hero } = gamestate;
 	if (!hero) return;
 	const hero_dom = document.querySelector(".hero");
 	const hero_animation_src_dom = document.querySelector('.hero_animation_source')
 	const hero_animation_img_dom = document.querySelector('.hero_animation_img')
+	const hero_animation_poster_dom = document.querySelector('.hero_animation')
 	if (!hero_dom) return;
 	if (!hero_animation_src_dom) return;
+	if (!hero_animation_poster_dom) return;
 	if (!hero_animation_img_dom) return;
 
 	// get hero name
@@ -55,6 +57,7 @@ function render_hero() {
 	// update the player renderer
 	hero_animation_src_dom.setAttribute("src", `https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${hero_name}.webm`)
 	hero_animation_img_dom.setAttribute("src", `https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${hero_name}.png`)
+	hero_animation_poster_dom.setAttribute("poster", `https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/${hero_name}.png`)
 }
 
 // render hero abilities and stats

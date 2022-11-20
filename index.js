@@ -62,6 +62,7 @@ function setup_root_route() {
   app.get('/', (_, res) => {
     res.sendFile(__dirname + '/src/index.html');
   });
+  app.use('/', express.static(__dirname + '/src/'));
 }
 
 /**
