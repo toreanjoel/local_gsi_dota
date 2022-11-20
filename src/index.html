@@ -4,18 +4,40 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <!-- import css -->
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>Local GSI - Dota 2</title>
 </head>
 <body>
-  <pre id="data"></pre>
+  <div class="loader"></div>
+  <div class="wrapper">
+    <div></div>
+    <div class="content">
+      <div class="hero_section">
+          <div class="hero_avatar">
+            <video
+              class="hero_animation"
+              poster="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.png"
+              autoplay controls preload="auto" loop="" playsinline="">
+              <source type="video/webm" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.webm">
+              <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.png">
+            </video>
+            <div class="hero_bottom_overlay"></div>
+          </div>
+      </div>
+      <div class="widget_section">
+          <div class="hero_player_details">User and hero name</div>
+          <div class="widgets">
+            Widgets go here - fallback to add button by default
+          </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+  <!-- change the route below to get from the relative socket io path? -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script>
-  <script>
-    var socket = io();
-    // socket.emit('chat message', input.value);
-    console.log(socket)
-    socket.on('game_state', (data) => {
-      document.getElementById("data").innerHTML = JSON.stringify(data.gamestate, null, 2);
-    })
-  </script>
+  <!-- local imports -->
+  <script src="./js/constants.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
