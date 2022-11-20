@@ -9,7 +9,9 @@
   <title>Local GSI - Dota 2</title>
 </head>
 <body>
-  <div class="loader"></div>
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+  </div>
   <div class="wrapper">
     <div></div>
     <div class="content">
@@ -19,14 +21,17 @@
               class="hero_animation"
               poster="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.png"
               autoplay controls preload="auto" loop="" playsinline="">
-              <source type="video/webm" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.webm">
-              <img src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.png">
+              <source class="hero_animation_source" type="video/webm" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.webm">
+              <img class="hero_animation_img" src="https://cdn.cloudflare.steamstatic.com/apps/dota2/videos/dota_react/heroes/renders/sand_king.png">
             </video>
             <div class="hero_bottom_overlay"></div>
           </div>
       </div>
       <div class="widget_section">
-          <div class="hero_player_details">User and hero name</div>
+          <div class="hero_player_details">
+            <div class="user">User</div>
+            <div class="hero">HERO</div>
+          </div>
           <div class="widgets">
             Widgets go here - fallback to add button by default
           </div>
