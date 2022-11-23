@@ -5,14 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- import css -->
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/card.css">
   <title>Local GSI - Dota 2</title>
 </head>
 <body>
   <div class="loader-wrapper">
     <div class="loader"></div>
   </div>
-  <div class="wrapper">
+  <div class="wrapper" style="display: none">
     <div></div>
     <div class="content">
       <div class="hero_section">
@@ -39,6 +40,18 @@
     </div>
     <div></div>
   </div>
+  <!-- Start of character card -->
+  <div class="card-wrapper">
+    <div class="card">
+      <div></div>
+      <div class="card-details">
+        <div class="card-player-name"> player name</div>
+        <div class="card-character-name"> Character Name</div>
+      </div>
+    </div>
+    <div class="card-widgets">widgets</div>
+  </div>
+  <!-- End of character card -->
   <!-- change the route below to get from the relative socket io path? -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script>
   <!-- local imports -->

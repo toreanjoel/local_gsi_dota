@@ -1,0 +1,36 @@
+/* The ui setup for the card itself */
+
+.card-wrapper {
+    display: grid;
+    height: 100%;
+    justify-content: center;
+    font-family: sans-serif;
+    grid-template-columns: auto 1fr;
+}
+
+.card {
+    background: grey;
+    width: 280px;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px 0 0 10px;
+    display: grid;
+    grid-template-rows: 2fr auto;
+    background: url(https://c4.wallpaperflare.com/wallpaper/708/988/29/dota-2-heroes-night-stalker-loading-screen-hunter-in-the-night-crippling-fear-darkness-void-1920%C3%971080-wallpaper-preview.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.card-details {
+    padding: 10px;
+    background: linear-gradient(0deg, rgb(0 0 0 / 76%) 20%, rgb(0 0 0 / 0%) 100%);
+}
+
+.card-character-name {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.card-widgets {
+    background: rgb(0, 0, 0);
+    padding: 10px;
+}
