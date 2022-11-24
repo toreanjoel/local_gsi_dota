@@ -1,0 +1,19 @@
+/* The ui setup for the widget itself */
+
+.widget {
+    min-width: 80px;
+    padding: 10px;
+    background: #7575754d;
+    border-left: 2px solid #c5f0ff;
+    border-radius: 5px 0 0 5px;
+    height: 35px;
+    margin: 3px;
+}
+
+.widget-title {
+    font-size: 10px;
+}
+
+.widget-details {
+    font-size: 20px;
+}

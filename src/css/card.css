@@ -3,26 +3,28 @@
 .card-wrapper {
     display: grid;
     height: 100%;
+    max-height: 450px;
+    width: 900px;
     justify-content: center;
     font-family: sans-serif;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 350px 3fr;
+    margin: 0 auto;
 }
 
 .card {
     background: grey;
-    width: 280px;
     height: 100%;
-    margin: 0 auto;
+    width: 350px;
     border-radius: 10px 0 0 10px;
     display: grid;
-    grid-template-rows: 2fr auto;
+    grid-template-rows: 2fr 1fr;
     background: url(https://c4.wallpaperflare.com/wallpaper/708/988/29/dota-2-heroes-night-stalker-loading-screen-hunter-in-the-night-crippling-fear-darkness-void-1920%C3%971080-wallpaper-preview.jpg) center center no-repeat;
     background-size: cover;
 }
 
 .card-details {
-    padding: 10px;
-    background: linear-gradient(0deg, rgb(0 0 0 / 76%) 20%, rgb(0 0 0 / 0%) 100%);
+    padding: 10px 30px;
+    background: linear-gradient(0deg, rgb(0 0 0 / 100%) 20%, rgb(0 0 0 / 50%) 50%, rgb(0 0 0 / 0%) 100%);
 }
 
 .card-character-name {
@@ -33,4 +35,8 @@
 .card-widgets {
     background: rgb(0, 0, 0);
     padding: 10px;
+    grid-template-columns: repeat(3, auto);
+    grid-auto-rows: max-content;
+    display: grid;
+    overflow: auto;
 }
