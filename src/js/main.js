@@ -240,3 +240,10 @@ function render_widgets(key, value) {
 	widget.append(widget_details)
 	card_widget_parent.append(widget)
 }
+
+/**** TODO */
+// loadeers between states
+// check spectator mode and put it in the relevant view to showcase
+// cleanup css, split files js
+// lower the timer between events
+// UI implementation
