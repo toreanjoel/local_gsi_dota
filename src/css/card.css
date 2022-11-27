@@ -12,14 +12,12 @@
 }
 
 .card {
-    background: grey;
+    background: rgb(43, 43, 43);
     height: 100%;
     width: 350px;
     border-radius: 10px 0 0 10px;
     display: grid;
     grid-template-rows: 2fr 1fr;
-    background: url(https://c4.wallpaperflare.com/wallpaper/708/988/29/dota-2-heroes-night-stalker-loading-screen-hunter-in-the-night-crippling-fear-darkness-void-1920%C3%971080-wallpaper-preview.jpg) center center no-repeat;
-    background-size: cover;
 }
 
 .card-details {
@@ -39,4 +37,8 @@
     grid-auto-rows: max-content;
     display: grid;
     overflow: auto;
+}
+
+.hero_animation {
+    width: 100%;
 }

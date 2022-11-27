@@ -14,82 +14,35 @@
   <div class="loader-wrapper">
     <div class="loader"></div>
   </div>
-  <div class="wrapper" style="display: none">
-    <div></div>
-    <div class="content">
-      <div class="hero_section">
-          <div class="hero_avatar">
-            <video
-              class="hero_animation"
-              poster=""
-              autoplay preload="auto" loop playsinline>
-              <source class="hero_animation_source" type="video/webm" src="">
-              <img class="hero_animation_img" src="">
-            </video>
-            <div class="hero_bottom_overlay"></div>
-          </div>
-      </div>
-      <div class="widget_section">
-          <div class="hero_player_details">
-            <div class="user">User</div>
-            <div class="hero">HERO</div>
-          </div>
-          <div class="widgets">
-            Widgets go here - fallback to add button by default
-          </div>
-      </div>
-    </div>
-    <div></div>
-  </div>
   <!-- Start of character card -->
   <div class="card-wrapper">
     <div class="card">
-      <div></div>
+      <div class="hero_section">
+        <div class="hero_avatar">
+          <video
+            class="hero_animation"
+            poster=""
+            muted
+            autoplay preload="auto" loop playsinline>
+            <source class="hero_animation_source" type="video/webm" src="">
+            <img class="hero_animation_img" src="">
+          </video>
+          <div class="hero_bottom_overlay"></div>
+        </div>
+      </div>
       <div class="card-details">
-        <div class="card-player-name"> player name</div>
-        <div class="card-character-name"> Character Name</div>
+        <div class="card-player-name"></div>
+        <div class="card-character-name"></div>
       </div>
     </div>
-    <div class="card-widgets">
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-      <div class="widget">
-        <div class="widget-title">Title</div>
-        <div class="widget-details">Details</div>
-      </div>
-    </div>
+    <div class="card-widgets"></div>
   </div>
   <!-- End of character card -->
   <!-- change the route below to get from the relative socket io path? -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.min.js"></script>
   <!-- local imports -->
   <script src="./js/constants.js"></script>
+  <script src="./js/local_game_state.js"></script>
   <script src="./js/main.js"></script>
 </body>
 </html>
